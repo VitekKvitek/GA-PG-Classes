@@ -9,15 +9,17 @@ import java.util.Arrays;
 
 public class GenerujKlic {
     public static void main(String[] args) throws NoSuchAlgorithmException, IOException {
+
         KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
         keyGenerator.init(128);
         SecretKey key = keyGenerator.generateKey();
 
-        byte[] k = key.getEncoded();
+        byte[] bytekey = key.getEncoded();
 
         Path jmenoSouboru = Paths.get("mujklic.dat");
-        Files.write(jmenoSouboru, k);
+        Files.write(jmenoSouboru, bytekey);
 
-        System.out.println(Arrays.toString(k));
+
+        //System.out.println(Arrays.toString(bytekey));
     }
 }
