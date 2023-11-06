@@ -19,7 +19,5 @@ public class GenerujKlic {
         Path jmenoSouboru = Paths.get("mujklic.dat");
         Files.write(jmenoSouboru, bytekey);
 
-
-        //System.out.println(Arrays.toString(bytekey));
     }
 }
