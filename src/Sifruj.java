@@ -15,7 +15,7 @@ public class Sifruj {
 
         String zprava = sc.nextLine();
 
-        Path jmenosouboru = Paths.get("mujklic.dat");
+        Path jmenosouboru = Paths.get("klic.dat");
         byte[] bytekey = Files.readAllBytes(jmenosouboru);
 
         SecretKey key = new SecretKeySpec(bytekey, "AES");
