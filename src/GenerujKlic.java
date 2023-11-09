@@ -16,7 +16,7 @@ public class GenerujKlic {
 
         byte[] bytekey = key.getEncoded();
 
-        Path jmenoSouboru = Paths.get("mujklic.dat");
+        Path jmenoSouboru = Paths.get("klic.dat");
         Files.write(jmenoSouboru, bytekey);
 
     }

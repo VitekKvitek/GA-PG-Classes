@@ -10,7 +10,7 @@ import java.security.NoSuchAlgorithmException;
 public class Desifruj {
     public static void main(String[] args) throws IOException, NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
 
-        Path jmenosouboru = Paths.get("mujklic.dat");
+        Path jmenosouboru = Paths.get("klic.dat");
         byte[] bytekey = Files.readAllBytes(jmenosouboru);
         SecretKey key = new SecretKeySpec(bytekey, "AES");
 
