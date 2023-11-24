@@ -13,7 +13,7 @@ import java.util.Base64;
 
 public class CipherForStupid {
     public static void main(String[] args) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException, IOException {
-        String message = "cokolada fuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuj";
+        String message = "cokolady neee";
         KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
         keyGenerator.init(128);
         SecretKey key = keyGenerator.generateKey();
