@@ -3,9 +3,12 @@ import java.sql.*;
 public class MojeDB {
     public static void main(String[] args) {
         String[] data = {"jedna", "dva", "tri", "ctyri", "pet", "sest"};
-        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:sample.db")) {
+        try (Connection conn = DriverManager.getConnection(
+                "jdbc:postgresql://localhost:5432/db1372",
+                "db1372",
+                "ooXiete2aiHe3eeko6Ee")) {
             /* kód používající conn */
-            try (Statement stmt = conn.createStatement()) {
+            /*try (Statement stmt = conn.createStatement()) {
                 stmt.executeUpdate("DROP TABLE cislo3");
                 stmt.executeUpdate("CREATE TABLE IF NOT EXISTS cislo3 (n INT, popis VARCHAR)");
                 for (int i = 0; i < data.length; i++) {
@@ -22,9 +25,9 @@ public class MojeDB {
                     }
                 }
 
-            }
+            }*/
         } catch (SQLException e) {
-
+            e.printStackTrace();
         }
     }
 }
