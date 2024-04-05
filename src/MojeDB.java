@@ -8,8 +8,7 @@ public class MojeDB {
                 "db1372",
                 "ooXiete2aiHe3eeko6Ee")) {
             /* kód používající conn */
-            /*try (Statement stmt = conn.createStatement()) {
-                stmt.executeUpdate("DROP TABLE cislo3");
+            try (Statement stmt = conn.createStatement()) {
                 stmt.executeUpdate("CREATE TABLE IF NOT EXISTS cislo3 (n INT, popis VARCHAR)");
                 for (int i = 0; i < data.length; i++) {
                     stmt.executeUpdate("INSERT INTO cislo3 VALUES (" + (i +1) + ",'" + data[i] + "')");
@@ -25,7 +24,7 @@ public class MojeDB {
                     }
                 }
 
-            }*/
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
