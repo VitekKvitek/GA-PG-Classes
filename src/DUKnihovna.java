@@ -7,7 +7,6 @@ public class DUKnihovna {
                 "jdbc:postgresql:")) {
             System.out.println("pripojeno k databazi");
             HashMap<Integer, Integer> knihyUdaje = vsechnyVypujcky(conn);
-
             int nejVyskyt = Integer.MIN_VALUE;
             int nejID = 0;
             for (Map.Entry<Integer, Integer> entry :
@@ -19,8 +18,6 @@ public class DUKnihovna {
                     nejID = key;
                 }
             }
-            String jmenoKnihy = getJmenoKnihy(conn, nejID);
-
             HashSet<Integer> idPujcovatelu = getSeznamID(conn, nejID);
             ArrayList<String> seznamPrij = new ArrayList<String>();
             for (int userId :
@@ -28,9 +25,14 @@ public class DUKnihovna {
                 String prijmeni = getPrijmeni(conn, userId);
                 seznamPrij.add(prijmeni);
             }
-            System.out.println(jmenoKnihy);
-            System.out.println(nejVyskyt);
-            System.out.println(seznamPrij);
+            StringBuffer stringBuffer = new StringBuffer();
+            stringBuffer.append(nejVyskyt);
+            for (String prijmeni :
+                    seznamPrij) {
+                stringBuffer.append(" ");
+                stringBuffer.append(prijmeni);
+            }
+            System.out.println(stringBuffer);
         }
     }
 
@@ -51,26 +53,12 @@ public class DUKnihovna {
         }
         return knihyUdaje;
     }
-
-    public static String getJmenoKnihy(Connection conn, int id) throws SQLException {
-        String query = "SELECT jmeno FROM kniha WHERE id = ?";
-        try (PreparedStatement stmt = conn.prepareStatement(query)) {
-            stmt.setString(1, String.valueOf(id));
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                return rs.getString("jmeno");
-            } else {
-                return "blby";
-            }
-        }
-    }
-
     public static HashSet<Integer> getSeznamID(Connection conn, int idKnihy) throws SQLException {
         HashSet<Integer> idPujcovatelu = new HashSet<Integer>();
 
         String query = "SELECT id_uzivatel FROM vypujcka WHERE id_kniha = ?";
         try (PreparedStatement stmt = conn.prepareStatement(query)) {
-            stmt.setString(1, String.valueOf(idKnihy));
+            stmt.setInt(1, idKnihy); // TADY MUSI BYT setInt
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 idPujcovatelu.add(rs.getInt("id_uzivatel"));
@@ -83,7 +71,7 @@ public class DUKnihovna {
 
         String query = "SELECT prijmeni FROM uzivatel WHERE id = ?";
         try (PreparedStatement stmt = conn.prepareStatement(query)) {
-            stmt.setString(1, String.valueOf(idUzivatel));
+            stmt.setInt(1, idUzivatel);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 return rs.getString("prijmeni");
