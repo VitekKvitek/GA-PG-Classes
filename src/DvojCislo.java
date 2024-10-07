@@ -40,12 +40,3 @@ public class DvojCislo {
         return multiplied;
     }
 }
-class  Main{
-    public static void main(String[] args) {
-        DvojCislo a = new DvojCislo(1,1);
-        DvojCislo b = new DvojCislo(2,2);
-
-        System.out.println(a.add(b));
-        System.out.println(a.mulitply(b));
-    }
-}
