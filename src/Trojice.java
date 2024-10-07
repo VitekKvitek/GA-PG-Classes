@@ -41,6 +41,7 @@ public class Trojice implements Iterable<Integer>{ // jaky typ to ma vracet
         }
         // iterator je basically for each - je to zabudovane v Jave
         // dvojice
+        // random note - 4 objekty iteratoru
         for (int x: t){
             for (int y: t){
                 System.out.println(Integer.toString(x) + Integer.toString(y));
