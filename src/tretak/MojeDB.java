@@ -1,3 +1,5 @@
+package tretak;
+
 import java.sql.*;
 
 public class MojeDB {

@@ -1,11 +1,10 @@
+package tretak;
+
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;

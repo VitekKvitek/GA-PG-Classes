@@ -1,8 +1,8 @@
+package tretak;
+
 import pl.allegro.finance.tradukisto.ValueConverters;
 
-import java.security.cert.TrustAnchor;
 import java.sql.*;
-import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class UniqueCisla {

@@ -1,3 +1,5 @@
+package tretak;
+
 import java.lang.reflect.Method;
 
 public class MojeTrida {

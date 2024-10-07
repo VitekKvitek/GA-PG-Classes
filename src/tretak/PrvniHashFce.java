@@ -1,3 +1,5 @@
+package tretak;
+
 public class PrvniHashFce {
     private static void  fromHashToMsg(int hash){
         String msg = "";

@@ -1,9 +1,9 @@
-import javax.swing.*;
+package tretak;
 
 public class DvojCislo {
     @Override
     public String toString() {
-        return "DvojCislo{" +
+        return "tretak.DvojCislo{" +
                 "prvni=" + prvni +
                 ", druhy=" + druhy +
                 '}';

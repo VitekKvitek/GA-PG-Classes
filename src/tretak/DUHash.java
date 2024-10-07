@@ -1,3 +1,5 @@
+package tretak;
+
 import java.util.Random;
 
 public class DUHash {

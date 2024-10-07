@@ -1,3 +1,5 @@
+package tretak;
+
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import java.io.IOException;
@@ -5,7 +7,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
 
 public class GenerujKlic {
     public static void main(String[] args) throws NoSuchAlgorithmException, IOException {
