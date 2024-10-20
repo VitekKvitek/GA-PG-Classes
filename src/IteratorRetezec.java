@@ -2,7 +2,7 @@ import java.util.Iterator;
 
 public class IteratorRetezec implements Iterator<Character> {
     MujRetezec mujretezec;
-    int i;
+    int i = -1;
 
     public IteratorRetezec(MujRetezec mujretezec) {
         this.mujretezec = mujretezec;
@@ -10,11 +10,19 @@ public class IteratorRetezec implements Iterator<Character> {
 
     @Override
     public boolean hasNext() {
-        return false;
+
+        if (i < mujretezec.str.length()){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     @Override
     public Character next() {
+        i++;
         return mujretezec.str.charAt(i);
+
     }
 }
