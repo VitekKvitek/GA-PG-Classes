@@ -1,3 +1,5 @@
+package tretak;
+
 import pl.allegro.finance.tradukisto.ValueConverters;
 
 import java.sql.*;
