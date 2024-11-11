@@ -18,15 +18,14 @@ public class MojeVlakno implements Runnable{
         };
         Thread t2 = new Thread(v2);
         // lambda expression
-        Runnable v3 = ()->{
+        Thread t3 = new Thread(()->{
             // Runnable ma jen jednu metodu
             //takze staci napsat jen telo metody
             {
                 for(int i = -1; i>-100; i--)
                     System.out.println(i);
             }
-        };
-        Thread t3 = new Thread(v3);
+        });
         t1.start();
         t2.start();
         t3.start();
