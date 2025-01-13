@@ -1,6 +1,7 @@
 package Tovarny;
 
 public class DobraTovarna implements Tovarna {
+    /** podle parametru jmenoJidla vytvori novy objekt patricneho typu */
     public Jidlo vyrobJidlo(String jmenoJidla) {
         if (jmenoJidla == null) {
             return null;
